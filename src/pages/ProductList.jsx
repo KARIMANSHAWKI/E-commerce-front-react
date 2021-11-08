@@ -4,9 +4,8 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -38,7 +37,7 @@ function ProductList() {
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
   const location = useLocation();
-  const cat = location.pathname.split('/')[2];
+  const cat = location.pathname.split("/")[2];
 
   const handleFilters = (e) => {
     const value = e.target.value;
@@ -57,9 +56,7 @@ function ProductList() {
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
-            <Option disabled>
-              Color
-            </Option>
+            <Option disabled>Color</Option>
             <Option>white</Option>
             <Option>black</Option>
             <Option>red</Option>
@@ -68,9 +65,7 @@ function ProductList() {
             <Option>green</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
-            <Option disabled>
-              Size
-            </Option>
+            <Option disabled>Size</Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
@@ -80,7 +75,7 @@ function ProductList() {
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
-          <Select onChange={(e)=> setSort(e.tar)}>
+          <Select onChange={(e) => setSort(e.tar)}>
             <Option value="newest">Newest</Option>
             <Option value="asc">Price (asc)</Option>
             <Option value="desc">Price (desc)</Option>
