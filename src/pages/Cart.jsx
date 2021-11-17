@@ -168,9 +168,7 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: 500,
         });
-        history.push("/success", {
-          stripeData: res.data,
-          products: cart, });
+        window.location.replace("/");
       } catch {}
     };
     stripeToken && makeRequest();
